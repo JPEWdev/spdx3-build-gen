@@ -43,7 +43,7 @@ def main():
         "--sources",
         "-s",
         nargs=2,
-        metavar="SOURCES SRCDIR",
+        metavar=("SOURCES", "SRCDIR"),
         type=Path,
         help="Path to list of source files and base source directory",
         action="append",
@@ -53,7 +53,7 @@ def main():
         "--builds",
         "-b",
         nargs=2,
-        metavar="BUILDS BUILDDIR",
+        metavar=("BUILDS", "BUILDDIR"),
         type=Path,
         help="Path to list of build files and base build directory",
         action="append",
@@ -64,7 +64,7 @@ def main():
         "--output",
         type=Path,
         default=Path("output.spdx.json"),
-        help="path to SPDX output file. Default is '%(default)s'",
+        help="Path to SPDX output file. Default is '%(default)s'",
     )
     parser.add_argument(
         "-n",
