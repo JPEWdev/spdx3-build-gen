@@ -181,8 +181,8 @@ def main():
         return re.sub(r"[^A-Za-z0-9:/_.-]", "_", spdxid)
 
     def make_agent(name, cls):
-        for c in creation_info.createdBy:
-            if isinstance(c, cls) and c.name == name:
+        for c in objset.foreach_type(cls):
+            if c.name == name:
                 return c
 
         return cls(
